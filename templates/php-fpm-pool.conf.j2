@@ -10,3 +10,12 @@ pm.start_servers = {{ php_fpm_pm_start_servers }}
 pm.min_spare_servers = {{ php_fpm_pm_min_spare_servers }}
 pm.max_spare_servers = {{ php_fpm_pm_max_spare_servers }}
 pm.max_requests = 500
+
+pm.status_path = /fpm-status
+ping.path = /fpm-ping
+
+access.log = /var/log/fpm-$pool.access.log
+slowlog = /var/log/fpm-$pool.slow.log
+php_admin_value[error_log] = /var/log/fpm-$pool.error.log
+
+
